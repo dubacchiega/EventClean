@@ -2,7 +2,9 @@ package com.bacchiega.EventClean.core.useCases;
 
 import com.bacchiega.EventClean.core.entities.Event;
 
-public interface FindEventCase {
+import java.util.List;
 
-    Event execute(Long id);
+public interface FindEventUseCase {
+
+    List<Event> execute();
 }
