@@ -24,4 +24,16 @@ jobs:
       - name: Build project
         run: mvn clean install
 
+      - name: Run all tests
+        run: mvn test
+
+      - name: Build Artifact
+        run: mvn clean package
+
+      - name: Store Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: myapp-jar
+          path: target/*jar
+
 
