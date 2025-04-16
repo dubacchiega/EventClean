@@ -1,0 +1,27 @@
+#1 nome da ação
+name: Build and deploy of EventAPI v1
+
+#2 gatilho para ação
+on:
+  push:
+    branches: [main]
+
+#3 o que a ação vai fazer
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code # nome da ação
+        uses: actions/checkout@v2 # a ação em si
+
+
+      - name: Configure Java
+        uses: actions/setup-java@v3
+        with:
+            java-version: '17'
+            distribution: 'temurin'
+
+      - name: Build project
+        run: mvn clean install
+
+
